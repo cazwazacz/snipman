@@ -1,0 +1,15 @@
+{
+  "name": "snippet-manager",
+  "version": "0.0.1",
+  "description": "A simple electron application which helps you manage code snippets locally",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/cazwazacz/snippet-manager",
+  "author": "Allan Wazacz",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^2.0.2"
+  }
+}
