@@ -3,6 +3,8 @@
 // All of the Node.js APIs are available in this process.
 const fs = require('fs');
 const saveButton = document.getElementById('saveButton');
+const menubar = require('./menubar');
+menubar.set(saveCode);
 
 var myCodeMirror = CodeMirror(document.body, {
     value: "function myScript() {return 100;}\n",
@@ -10,8 +12,7 @@ var myCodeMirror = CodeMirror(document.body, {
     theme: "darcula"
   });
 
-  
-saveButton.addEventListener('click', () => {
+function saveCode() {
     let codeBody = document.getElementsByClassName('cm-s-darcula')[0].innerText;
     
     fs.writeFile('hello.js', codeBody, (err) => {
@@ -19,4 +20,4 @@ saveButton.addEventListener('click', () => {
 
         console.log("File saved successfully!");
     })
-})
+}
