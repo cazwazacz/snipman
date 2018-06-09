@@ -2,11 +2,10 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 const fs = require('fs');
-const saveButton = document.getElementById('saveButton');
 const menubar = require('./menubar');
 menubar.set(saveCode);
 
-var myCodeMirror = CodeMirror(document.body, {
+var myCodeMirror = CodeMirror(document.getElementById('editor'), {
     value: "function myScript() {return 100;}\n",
     mode: "javascript",
     theme: "darcula"
