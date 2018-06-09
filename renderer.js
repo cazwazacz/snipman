@@ -13,7 +13,7 @@ var myCodeMirror = CodeMirror(document.body, {
   });
 
 function saveCode() {
-    let codeBody = document.getElementsByClassName('cm-s-darcula')[0].innerText;
+    let codeBody = myCodeMirror.getValue();
     
     fs.writeFile('hello.js', codeBody, (err) => {
         if(err) { return console.log("Could not save file!"); }
