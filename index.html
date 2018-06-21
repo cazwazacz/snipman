@@ -11,10 +11,27 @@
   <body>
     <style>
       html, body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        float: left;
+      }
+
+      #files {
+        float: left;
+        width: 20%;
+        height: 100%;
+        background-color: rgb(134, 134, 134);
+      }
+
+      #editor {
+        float: left;
+        width: 80%;
         height: 100%;
       }
     </style>
-    <div id="editor"></div>
+      <div id="files"></div>
+      <div id="editor"></div>
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
