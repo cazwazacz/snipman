@@ -14,7 +14,7 @@ var myCodeMirror = CodeMirror(document.getElementById('editor'), {
 function saveCode() {
     let codeBody = myCodeMirror.getValue();
     
-    fs.writeFile('hello.js', codeBody, (err) => {
+    fs.writeFile('files/hello.js', codeBody, (err) => {
         if(err) { return console.log("Could not save file!"); }
 
         console.log("File saved successfully!");
