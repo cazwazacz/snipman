@@ -3,7 +3,12 @@
 // All of the Node.js APIs are available in this process.
 const fs = require('fs');
 const menubar = require('./menubar');
+const files_directory = './files/';
+const filesDiv = document.getElementById('files');
+
 menubar.set(saveCode);
+
+getFiles();
 
 var myCodeMirror = CodeMirror(document.getElementById('editor'), {
     value: "function myScript() {return 100;}\n",
@@ -19,4 +24,16 @@ function saveCode() {
 
         console.log("File saved successfully!");
     })
+}
+
+function getFiles() {
+    fs.readdir(files_directory, (err, files) => {
+        files.forEach(file => {
+            filesDiv.innerHTML += createFileDiv(file);
+        });
+    })
+}
+
+function createFileDiv(file) {
+    return `<div>${file}</div>`;
 }
