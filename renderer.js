@@ -8,32 +8,45 @@ const filesDiv = document.getElementById('files');
 
 menubar.set(saveCode);
 
-getFiles();
-
 var myCodeMirror = CodeMirror(document.getElementById('editor'), {
     value: "function myScript() {return 100;}\n",
     mode: "javascript",
-    theme: "darcula"
-  });
+    theme: "monokai"
+});
 
 function saveCode() {
     let codeBody = myCodeMirror.getValue();
     
     fs.writeFile('files/hello.js', codeBody, (err) => {
         if(err) { return console.log("Could not save file!"); }
-
+        
         console.log("File saved successfully!");
     })
 }
 
 function getFiles() {
-    fs.readdir(files_directory, (err, files) => {
-        files.forEach(file => {
-            filesDiv.innerHTML += createFileDiv(file);
-        });
+    fs.readdirSync(files_directory).forEach(filename => {
+        filesDiv.innerHTML += createFileDiv(filename);
     })
 }
 
-function createFileDiv(file) {
-    return `<div>${file}</div>`;
+function createFileDiv(filename) {
+    return `<div class="filename">${filename}</div>`;
+}
+
+const filenames = document.getElementsByClassName('filename');
+
+getFiles();
+
+for(let i = 0; i <= filenames.length - 1; i++) {
+    var filename = filenames[i];
+    filenames[i].addEventListener('click', (e) => {
+        let filename = filenames[i].innerText;
+
+        fs.readFile(`files/${filename}`, 'utf-8', (err, data) => {
+            if (err) {throw err};
+
+            myCodeMirror.setValue(data);
+        })
+    })
 }
