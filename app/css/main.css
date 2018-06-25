@@ -16,12 +16,15 @@ html, body {
 
 #files div:not(:nth-child(1)) {
     cursor: default;
-    /* margin: 0; */
     padding: 3px 10px;
 }
 
-#files div:hover:not(:nth-child(1)) {
-    background-color: rgb(80, 80, 80);
+#selected-file {
+    background-color: rgb(99, 99, 99);
+}
+
+#files div:hover:not(:nth-child(1)):not(#selected-file) {
+    background-color: rgb(77, 77, 77);
 }
 
 #editor {

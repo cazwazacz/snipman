@@ -41,7 +41,13 @@ getFiles();
 for(let i = 0; i <= filenames.length - 1; i++) {
     var filename = filenames[i];
     filenames[i].addEventListener('click', (e) => {
-        let filename = filenames[i].innerText;
+        for(let i = 0; i <= filenames.length - 1; i++) {
+            filenames[i].id = '';
+        }
+        
+        e.target.id = 'selected-file';
+
+        let filename = e.target.innerText;
 
         fs.readFile(`files/${filename}`, 'utf-8', (err, data) => {
             if (err) {throw err};
