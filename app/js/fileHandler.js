@@ -22,7 +22,23 @@ class FileHandler {
         })
     }
 
-    readFile(filename) {
+    addListeners(buttons) {
+        for(let i = 0; i <= buttons.length - 1; i++) {
+            buttons[i].addEventListener('click', (e) => {
+                for(let i = 0; i <= buttons.length - 1; i++) {
+                    buttons[i].id = '';
+                }
+        
+                e.target.id = 'selected-file';
+        
+                let filename = e.target.innerText;
+        
+                this._readFile(filename);
+            })
+        }
+    }
+
+    _readFile(filename) {
         fs.readFile(this._filePath(filename), 'utf-8', (err, data) => {
             if (err) {throw err};
 

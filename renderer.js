@@ -10,17 +10,5 @@ menubar.set(fileHandler.saveCode);
 const filenames = document.getElementsByClassName('filename');
 
 fileHandler.getFiles();
+fileHandler.addListeners(filenames);
 
-for(let i = 0; i <= filenames.length - 1; i++) {
-    filenames[i].addEventListener('click', (e) => {
-        for(let i = 0; i <= filenames.length - 1; i++) {
-            filenames[i].id = '';
-        }
-
-        e.target.id = 'selected-file';
-
-        let filename = e.target.innerText;
-
-        fileHandler.readFile(filename);
-    })
-}
