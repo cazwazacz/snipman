@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "nyc --reporter=html ./node_modules/mocha/bin/mocha ./test/**/*.spec.js"
+    "test": "nyc --reporter=html ./node_modules/mocha/bin/mocha ./test/**/*.spec.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": "https://github.com/cazwazacz/snippet-manager",
   "author": "Allan Wazacz",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "coveralls": "^3.0.2",
     "electron-reload": "^1.2.5",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2"

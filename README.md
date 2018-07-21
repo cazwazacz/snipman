@@ -46,11 +46,11 @@ If you wish to submit a bug fix or feature, you can create a pull request and it
 [mocha]: https://mochajs.org/
 
 
-[info-travis]:   https://travis-ci.org/ukparliament/thorney
-[shield-travis]: https://img.shields.io/travis/ukparliament/thorney.svg
+[info-travis]:   https://travis-ci.com/cazwazacz/snipman
+[shield-travis]: https://travis-ci.com/cazwazacz/snipman.svg?branch=master
 
-[info-coveralls]:   https://coveralls.io/github/ukparliament/thorney
-[shield-coveralls]: https://img.shields.io/coveralls/ukparliament/thorney.svg
+[info-coveralls]:   https://coveralls.io/github/cazwazacz/snipman
+[shield-coveralls]: https://coveralls.io/repos/github/cazwazacz/snipman/badge.svg?branch=master
 
 [info-license]:   https://github.com/cazwazacz/snipman/blob/master/LICENSE
 [shield-license]: https://img.shields.io/badge/license-MIT-blue.svg
