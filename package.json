@@ -4,7 +4,8 @@
   "description": "A simple electron application which helps you manage code snippets locally",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "test": "./node_modules/mocha/bin/mocha ./test/**/*.spec.js"
   },
   "repository": "https://github.com/cazwazacz/snippet-manager",
   "author": "Allan Wazacz",
@@ -14,6 +15,8 @@
     "electron": "^2.0.2"
   },
   "devDependencies": {
-    "electron-reload": "^1.2.5"
+    "chai": "^4.1.2",
+    "electron-reload": "^1.2.5",
+    "mocha": "^5.2.0"
   }
 }
