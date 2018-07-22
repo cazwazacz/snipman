@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "setup": "mkdir files",
     "test": "nyc --reporter=html ./node_modules/mocha/bin/mocha ./test/**/*.spec.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },

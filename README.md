@@ -13,8 +13,11 @@
 git clone https://github.com/cazwazacz/snipman.git
 cd snipman
 npm install
+npm run setup
 npm test
 ```
+
+The `npm run setup` command creates a `files` directory in the project which the app uses for storing of files. Currently to start working you have to put a file called `hello.js` in this `files` directory.
 
 ## Running the application
 To run the application locally, run:
