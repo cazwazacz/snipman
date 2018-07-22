@@ -3,7 +3,6 @@ const fs = require('fs');
 class FileHandler {
     constructor(windowInstance) {
         this.windowInstance = windowInstance;
-        this.saveCode = this.saveCode.bind(this);
     }
     
     saveCode(filename) {
