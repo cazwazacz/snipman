@@ -5,6 +5,7 @@ class Window {
     constructor(document) {
         this.code = new MyCodeMirror(document);
         this.filesPane = new FilesPane(document);
+        this.editorPane = document.getElementById('editor');
     }
 
     addFileToDiv(filename) {
