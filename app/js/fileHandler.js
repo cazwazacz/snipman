@@ -4,8 +4,15 @@ class FileHandler {
     constructor(windowInstance) {
         this.windowInstance = windowInstance;
     }
+
+    setUp(filenames) {
+        this._getFiles();
+        this._readFile('hello.js');
+        this._addEditorPaneListeners();
+        this._addFilesPaneListeners(filenames);
+    }
     
-    saveCode(filename) {
+    _saveCode(filename) {
         let codeBody = this.windowInstance.code.getValue();
         
         fs.writeFile(`files/${filename}`, codeBody, (err) => {
@@ -15,13 +22,13 @@ class FileHandler {
         })
     }
     
-    getFiles() {
+    _getFiles() {
         fs.readdirSync(__dirname + '/../../files/').forEach(filename => {
             this.windowInstance.addFileToDiv(filename);
         })
     }
     
-    addListeners(buttons) {
+    _addFilesPaneListeners(buttons) {
         for(let i = 0; i <= buttons.length - 1; i++) {
             buttons[i].addEventListener('click', (e) => {
                 for(let i = 0; i <= buttons.length - 1; i++) {
@@ -32,12 +39,12 @@ class FileHandler {
                 
                 let filename = e.target.innerText;
                 
-                this.readFile(filename);
+                this._readFile(filename);
             })
         }
     }
     
-    readFile(filename) {
+    _readFile(filename) {
         fs.readFile(this._filePath(filename), 'utf-8', (err, data) => {
             if (err) {throw err};
     
@@ -46,11 +53,11 @@ class FileHandler {
         })
     }
 
-    addSaveCodeListeners() {
+    _addEditorPaneListeners() {
         this.windowInstance.editorPane.addEventListener('keyup', (e) => {
             let filename = this.windowInstance.editorPane.dataset.filename;
 
-            this.saveCode(filename);
+            this._saveCode(filename);
         })
     }
 

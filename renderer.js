@@ -6,8 +6,6 @@ const fileHandler = new FileHandler(windowInstance);
 
 const filenames = document.getElementsByClassName('filename');
 
-fileHandler.getFiles();
-fileHandler.readFile('hello.js');
-fileHandler.addSaveCodeListeners();
-fileHandler.addListeners(filenames);
+fileHandler.setUp(filenames);
+
 
