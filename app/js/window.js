@@ -11,6 +11,22 @@ class Window {
     addFileToDiv(filename) {
         this.filesPane.addFileToDiv(filename);
     }
+
+    getCode() {
+        return this.code.getValue();
+    }
+
+    setCode(data) {
+        this.code.setValue(data);
+    }
+
+    setEditorPaneFilename(filename) {
+        this.editorPane.dataset.filename = filename;
+    }
+
+    getEditorPaneFilename() {
+        return this.editorPane.dataset.filename;
+    }
 }
 
 module.exports = Window;
