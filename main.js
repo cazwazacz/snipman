@@ -1,5 +1,5 @@
 const {app, BrowserWindow} = require('electron')
-require('electron-reload')(__dirname);
+require('electron-reload')(__dirname, { ignored: [/node_modules|[\/\\]\./, /files|[\/\\]\./] });
 
 let mainWindow;
 
