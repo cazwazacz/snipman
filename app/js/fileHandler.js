@@ -16,6 +16,10 @@ class FileHandler {
         })
     }
 
+    openFile(filename) {
+        this._readFile(filename);
+    }
+
     getFiles() {
         fs.readdirSync(__dirname + '/../../files/').forEach(filename => {
             this.windowInstance.addFileToDiv(filename);

@@ -10,5 +10,7 @@ menubar.set(fileHandler.saveCode);
 const filenames = document.getElementsByClassName('filename');
 
 fileHandler.getFiles();
+fileHandler.openFile('hello.js');
+fileHandler.addSaveCodeListeners();
 fileHandler.addListeners(filenames);
 
