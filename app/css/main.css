@@ -5,6 +5,18 @@ html, body {
     float: left;
 }
 
+.CodeMirror {
+    height: 100%;
+    color: black;
+    direction: ltr;
+}
+
+.CodeMirror-cursor {
+    border-left: 1px solid rgb(161, 161, 161);
+    border-right: none;
+    width: 0;
+}
+
 #files {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(221, 221, 221);
