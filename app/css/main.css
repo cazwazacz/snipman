@@ -17,6 +17,9 @@ html, body {
     width: 0;
 }
 
+/* Set the font for the editor */
+.cm-s-monokai { font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;}
+
 #files {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(221, 221, 221);
