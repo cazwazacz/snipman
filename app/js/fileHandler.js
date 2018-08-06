@@ -32,10 +32,11 @@ class FileHandler {
         for(let i = 0; i <= buttons.length - 1; i++) {
             buttons[i].addEventListener('click', (e) => {
                 for(let i = 0; i <= buttons.length - 1; i++) {
-                    buttons[i].id = '';
+                    buttons[i].classList.remove('active');
                 }
                 
-                e.target.id = 'selected-file';
+                e.target.classList.add('active');
+
                 let filename = e.target.innerText;
 
                 this._readFile(filename);

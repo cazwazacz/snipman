@@ -1,14 +1,15 @@
 class FilesPane {
     constructor(document) {
-        this._filesDiv = document.getElementById('files');;
+        this._filesDiv = document.getElementById('files');
+        this._filesDiv.appendChild(document.createElement('ul'));
     }
 
     addFileToDiv(filename) {
-        this._filesDiv.innerHTML += this._createFileDiv(filename);
+        this._filesDiv.querySelector('ul').innerHTML += this._createFileDiv(filename);
     }
 
     _createFileDiv(filename) {
-        return `<div class="filename">${filename}</div>`
+        return `<li class="filename">${filename}</li>`
     }
 }
 
