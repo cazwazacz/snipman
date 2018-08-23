@@ -8,8 +8,20 @@ class Window {
         this.editorPane = document.getElementById('editor');
     }
 
+    filenames() {
+        return this.filesPane.filenames();
+    }
+
+    newButton() {
+        return this.filesPane.newButton();
+    }
+
     addFileToDiv(filename) {
         this.filesPane.addFileToDiv(filename);
+    }
+
+    clearList() {
+        this.filesPane.clearDiv();
     }
 
     getCode() {

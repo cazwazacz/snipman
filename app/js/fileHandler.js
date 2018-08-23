@@ -3,13 +3,17 @@ const fs = require('fs');
 class FileHandler {
     constructor(windowInstance) {
         this.windowInstance = windowInstance;
+
+        this.number = 1;
     }
 
-    setUp(filenames) {
+    setUp() {
+        this.windowInstance.clearList();
         this._getFiles();
         this._readFile(this._getFirstFile());
         this._addEditorPaneListeners();
-        this._addFilesPaneListeners(filenames);
+        this._addFilesPaneListeners(this.windowInstance.filenames());
+        this._addNewButtonListener();
     }
     
     _saveCode(filename) {
@@ -23,6 +27,8 @@ class FileHandler {
     }
     
     _getFiles() {
+        // this.windowInstance.clearList();
+
         fs.readdirSync(__dirname + '/../../files/').forEach(filename => {
             this.windowInstance.addFileToDiv(filename);
         })
@@ -42,6 +48,19 @@ class FileHandler {
                 this._readFile(filename);
             })
         }
+    }
+
+    _addNewButtonListener() {
+        this.windowInstance.newButton().addEventListener('click', () => {
+            // this.windowInstance.clearList();
+
+            this.number = this.number + 1;
+            
+            fs.writeFileSync(__dirname + `/../../files/${this.number}.js`, 'var hello = 1;');
+
+            this.setUp();
+            // this._getFiles();
+        })
     }
     
     _readFile(filename) {
