@@ -3,6 +3,8 @@
 
 [![Build Status][shield-travis]][info-travis] [![Test Coverage][shield-coveralls]][info-coveralls] [![License][shield-license]][info-license]
 
+> **NOTE:** This app is in active development and is likely to change at short notice. It is not recommended that you use this in any commercial environment.
+
 ## Requirements
 [Snipman][snipman] requires the following:
 * [NodeJS][nodejs] - [click here][node-version] for the exact version
